@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.auth.FirebaseUser;
 import com.lindembergh.whatsapp.R;
 import com.lindembergh.whatsapp.config.ConfiguracaoFirebase;
 import com.lindembergh.whatsapp.model.Usuario;
@@ -81,6 +82,15 @@ public class LoginActivity extends AppCompatActivity {
 
         }else{
             Toast.makeText(LoginActivity.this, "Preencha o email!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        FirebaseUser usuarioAtual = autenticacao.getCurrentUser();
+        if(usuarioAtual != null){
+            abrirTelaPrincipal();
         }
     }
 
