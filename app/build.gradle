@@ -45,6 +45,9 @@ dependencies {
     implementation 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
     //noinspection GradleCompatible
     implementation 'com.android.support:design:26.1.0'
+
+    //Dependência para arredondamento de imagens
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
